@@ -7,3 +7,7 @@
 ### Brain-even game demo:
 
 https://asciinema.org/a/juSDWUBMDsU2KeY7i7Mf176jj
+
+### Brain-calc game demo:
+
+https://asciinema.org/a/1fVbNpzctJbzKaLX6Y2HMfRyn
