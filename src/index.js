@@ -6,13 +6,6 @@ const getRandomNumber = () => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const getRandomOperator = () => {
-  const operators = ['-', '+', '*'];
-  const randomIndex = Math.floor(Math.random() * 3);
-  const operator = operators[randomIndex];
-  return operator;
-};
-
 const playerWelcome = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -25,45 +18,17 @@ const playerQuestion = () => {
   return result;
 };
 
-const playerLose = (incorrect, correct, player) => console.log(`'${incorrect}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${player}!`);
-const playerWin = (player) => console.log(`Congratulations, ${player}!`);
+const playerLose = (incorrect, correct, player) => `'${incorrect}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${player}!`;
+const playerWin = (player) => `Congratulations, ${player}!`;
 
 const gameOver = (correctAnswers, incorrect, correct, player) => {
-  let result = '';
   if (correctAnswers > 2) {
-    result = playerWin(player);
+    console.log(playerWin(player));
   } else {
-    result = playerLose(incorrect, correct, player);
+    console.log(playerLose(incorrect, correct, player));
   }
-  return result;
-};
-
-const getCorrectAnswer = (example) => {
-  let correctAnswer;
-  switch (example[1]) {
-    case '+':
-      correctAnswer = example[0] + example[2];
-      break;
-    case '-':
-      correctAnswer = example[0] - example[2];
-      break;
-    default:
-      correctAnswer = example[0] * example[2];
-  }
-  return correctAnswer;
-};
-
-const operation = (a, operator, b) => {
-  const example = [a, operator, b];
-  return example;
-};
-
-const isEven = (num) => {
-  const even = (num % 2 === 0) ? 'yes' : 'no';
-  return even;
 };
 
 export {
-  playerQuestion, getRandomNumber, getRandomOperator,
-  playerWelcome, playerLose, playerWin, gameOver, getCorrectAnswer, operation, isEven,
+  playerQuestion, getRandomNumber, playerWelcome, playerLose, playerWin, gameOver,
 };
