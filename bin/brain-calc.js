@@ -2,6 +2,33 @@
 import * as fun from '../src/index.js';
 import playerWelcome from '../src/cli.js';
 
+const getRandomOperator = () => {
+  const operators = ['-', '+', '*'];
+  const randomIndex = Math.floor(Math.random() * 3);
+  const operator = operators[randomIndex];
+  return operator;
+};
+
+const operation = (a, operator, b) => {
+  const example = [a, operator, b];
+  return example;
+};
+
+const getCorrectAnswer = (example) => {
+  let correctAnswer;
+  switch (example[1]) {
+    case '+':
+      correctAnswer = example[0] + example[2];
+      break;
+    case '-':
+      correctAnswer = example[0] - example[2];
+      break;
+    default:
+      correctAnswer = example[0] * example[2];
+  }
+  return correctAnswer;
+};
+
 const rules = 'What is the result of the expression?';
 let correctAnswer;
 let playerAnswer;
@@ -13,8 +40,8 @@ const brainCalc = () => {
   name = playerWelcome();
   console.log(rules);
   while (correctAnswers < 3) {
-    example = fun.operation(fun.getRandomNumber(), fun.getRandomOperator(), fun.getRandomNumber());
-    correctAnswer = fun.getCorrectAnswer(example);
+    example = operation(fun.getRandomNumber(), getRandomOperator(), fun.getRandomNumber());
+    correctAnswer = getCorrectAnswer(example);
     console.log(`Question: ${example[0]}${example[1]}${example[2]}`);
     playerAnswer = fun.playerQuestion();
     if (+correctAnswer === +playerAnswer) {
@@ -24,7 +51,7 @@ const brainCalc = () => {
       break;
     }
   }
-  console.log(fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name));
+  fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name);
 };
 
 brainCalc();
