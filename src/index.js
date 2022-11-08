@@ -6,13 +6,6 @@ const getRandomNumber = () => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const playerWelcome = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
-  return name;
-};
-
 const playerQuestion = () => {
   const result = readlineSync.question('Your answer: ');
   return result;
@@ -30,5 +23,5 @@ const gameOver = (correctAnswers, incorrect, correct, player) => {
 };
 
 export {
-  playerQuestion, getRandomNumber, playerWelcome, playerLose, playerWin, gameOver,
+  playerQuestion, getRandomNumber, playerLose, playerWin, gameOver,
 };
