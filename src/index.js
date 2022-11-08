@@ -25,6 +25,45 @@ const playerQuestion = () => {
   return result;
 };
 
+const playerLose = (incorrect, correct, player) => console.log(`'${incorrect}' is wrong answer ;(. Correct answer was '${correct}'.\nLet's try again, ${player}!`);
+const playerWin = (player) => console.log(`Congratulations, ${player}!`);
+
+const gameOver = (correctAnswers, incorrect, correct, player) => {
+  let result = '';
+  if (correctAnswers > 2) {
+    result = playerWin(player);
+  } else {
+    result = playerLose(incorrect, correct, player);
+  }
+  return result;
+};
+
+const getCorrectAnswer = (example) => {
+  let correctAnswer;
+  switch (example[1]) {
+    case '+':
+      correctAnswer = example[0] + example[2];
+      break;
+    case '-':
+      correctAnswer = example[0] - example[2];
+      break;
+    default:
+      correctAnswer = example[0] * example[2];
+  }
+  return correctAnswer;
+};
+
+const operation = (a, operator, b) => {
+  const example = [a, operator, b];
+  return example;
+};
+
+const isEven = (num) => {
+  const even = (num % 2 === 0) ? 'yes' : 'no';
+  return even;
+};
+
 export {
-  playerQuestion, getRandomNumber, getRandomOperator, playerWelcome,
+  playerQuestion, getRandomNumber, getRandomOperator,
+  playerWelcome, playerLose, playerWin, gameOver, getCorrectAnswer, operation, isEven,
 };
