@@ -40,7 +40,8 @@ const brainCalc = () => {
   name = playerWelcome();
   console.log(rules);
   while (correctAnswers < 3) {
-    example = operation(fun.getRandomNumber(), getRandomOperator(), fun.getRandomNumber());
+    // eslint-disable-next-line max-len
+    example = operation(fun.getRandomNumber(1, 50), getRandomOperator(), fun.getRandomNumber(1, 50));
     correctAnswer = getCorrectAnswer(example);
     console.log(`Question: ${example[0]}${example[1]}${example[2]}`);
     playerAnswer = fun.playerQuestion();
