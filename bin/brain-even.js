@@ -18,7 +18,7 @@ const brainEven = () => {
   name = playerWelcome();
   console.log(rules);
   while (correctAnswers < 3) {
-    randomNumber = fun.getRandomNumber();
+    randomNumber = fun.getRandomNumber(1, 100);
     console.log(randomNumber);
     correctAnswer = isEven(randomNumber);
     playerAnswer = fun.playerQuestion();
