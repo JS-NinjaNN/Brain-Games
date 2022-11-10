@@ -6,7 +6,7 @@
 
 ### Brain-even game demo:
 
-https://asciinema.org/a/juSDWUBMDsU2KeY7i7Mf176jj
+https://asciinema.org/a/2KBZHEyGpv2vjCBOc61XiRnuf
 
 ### Brain-calc game demo:
 
@@ -19,3 +19,7 @@ https://asciinema.org/a/hpsMndQAer8iAndjMUvaUDw78
 ### Brain-progression game demo:
 
 https://asciinema.org/a/mR9n3l9gbCglzk3FrY22q1t0c
+
+### Brain-prime game demo:
+
+https://asciinema.org/a/f1u96iWv0dhQW59H2aQpJr0sL
