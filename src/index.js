@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const getRandomNumber = () => {
-  const min = Math.ceil(1);
-  const max = Math.floor(100);
+const getRandomNumber = (start, finish) => {
+  const min = Math.ceil(start);
+  const max = Math.floor(finish);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
