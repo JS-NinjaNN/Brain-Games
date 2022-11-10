@@ -4,22 +4,21 @@
 
 <a href="https://codeclimate.com/github/ToxicNN/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ae900498ba84d470d1a/maintainability" /></a>
 
-### Brain-even game demo:
+- ### [Brain-even game demo](https://asciinema.org/a/2KBZHEyGpv2vjCBOc61XiRnuf)
+- ### [Brain-calc game demo](https://asciinema.org/a/1fVbNpzctJbzKaLX6Y2HMfRyn)
+- ### [Brain-gcd game demo](https://asciinema.org/a/hpsMndQAer8iAndjMUvaUDw78)
+- ### [Brain-progression game demo](https://asciinema.org/a/mR9n3l9gbCglzk3FrY22q1t0c)
+- ### [Brain-prime game demo](https://asciinema.org/a/f1u96iWv0dhQW59H2aQpJr0sL)
 
-https://asciinema.org/a/2KBZHEyGpv2vjCBOc61XiRnuf
+## Installation:
 
-### Brain-calc game demo:
+---
 
-https://asciinema.org/a/1fVbNpzctJbzKaLX6Y2HMfRyn
+### Requires node js and npm
 
-### Brain-gcd game demo:
+---
 
-https://asciinema.org/a/hpsMndQAer8iAndjMUvaUDw78
+> $ npm link
 
-### Brain-progression game demo:
-
-https://asciinema.org/a/mR9n3l9gbCglzk3FrY22q1t0c
-
-### Brain-prime game demo:
-
-https://asciinema.org/a/f1u96iWv0dhQW59H2aQpJr0sL
+> $ game-name
+> Game names: `brain-even`, `brain-calc`, `brain-gcd`, `brain-progression`, `brain-prime`
