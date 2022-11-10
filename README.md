@@ -14,11 +14,9 @@
 
 ---
 
-### Requires node js and npm
-
----
+### **Requires node js and npm (bold)**
 
 > $ npm link
-
 > $ game-name
-> Game names: `brain-even`, `brain-calc`, `brain-gcd`, `brain-progression`, `brain-prime`
+
+Game names: `brain-even`, `brain-calc`, `brain-gcd`, `brain-progression`, `brain-prime`
