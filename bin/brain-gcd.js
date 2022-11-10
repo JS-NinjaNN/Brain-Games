@@ -27,8 +27,8 @@ const brainGcd = () => {
   name = playerWelcome();
   console.log(rules);
   while (correctAnswers < 3) {
-    givenNumberOne = fun.getRandomNumber();
-    givenNumberTwo = fun.getRandomNumber();
+    givenNumberOne = fun.getRandomNumber(1, 50);
+    givenNumberTwo = fun.getRandomNumber(1, 50);
     console.log(`Question: ${givenNumberOne} ${givenNumberTwo}`);
     correctAnswer = getGCD(givenNumberOne, givenNumberTwo);
     playerAnswer = fun.playerQuestion();
