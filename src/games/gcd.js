@@ -1,4 +1,5 @@
 import * as fun from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getGCD = (a, b) => {
   let answer;
@@ -21,15 +22,19 @@ let givenNumberTwo;
 let correctAnswers = 0;
 let name;
 
+const getNewRound = () => {
+  givenNumberOne = getRandomNumber(1, 50);
+  givenNumberTwo = getRandomNumber(1, 50);
+  console.log(`Question: ${givenNumberOne} ${givenNumberTwo}`);
+  correctAnswer = getGCD(givenNumberOne, givenNumberTwo);
+  playerAnswer = fun.playerQuestion();
+};
+
 const brainGcd = () => {
   name = fun.playerGreetings();
   console.log(rules);
   while (correctAnswers < 3) {
-    givenNumberOne = fun.getRandomNumber(1, 50);
-    givenNumberTwo = fun.getRandomNumber(1, 50);
-    console.log(`Question: ${givenNumberOne} ${givenNumberTwo}`);
-    correctAnswer = getGCD(givenNumberOne, givenNumberTwo);
-    playerAnswer = fun.playerQuestion();
+    getNewRound();
     if (+correctAnswer === +playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
