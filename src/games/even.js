@@ -1,4 +1,5 @@
 import * as fun from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isEven = (num) => {
   const even = (num % 2 === 0) ? 'yes' : 'no';
@@ -12,14 +13,18 @@ let randomNumber;
 let correctAnswer;
 let playerAnswer;
 
+const getNewRound = () => {
+  randomNumber = getRandomNumber(1, 100);
+  console.log(`Question: ${randomNumber}`);
+  correctAnswer = isEven(randomNumber);
+  playerAnswer = fun.playerQuestion();
+};
+
 const brainEven = () => {
   name = fun.playerGreetings();
   console.log(rules);
   while (correctAnswers < 3) {
-    randomNumber = fun.getRandomNumber(1, 100);
-    console.log(`Question: ${randomNumber}`);
-    correctAnswer = isEven(randomNumber);
-    playerAnswer = fun.playerQuestion();
+    getNewRound();
     if (correctAnswer === playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
