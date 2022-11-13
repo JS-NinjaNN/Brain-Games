@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const getRandomNumber = (start, finish) => Math.floor(Math.random() * (finish - start + 1)) + start;
-
 const playerQuestion = () => {
   const result = readlineSync.question('Your answer: ');
   return result;
@@ -26,5 +24,5 @@ const playerGreetings = () => {
 };
 
 export {
-  playerQuestion, getRandomNumber, playerLose, playerWin, gameOver, playerGreetings,
+  playerQuestion, playerLose, playerWin, gameOver, playerGreetings,
 };
