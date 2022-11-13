@@ -1,10 +1,11 @@
 import * as fun from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomProgression = () => {
   const progression = [];
-  const progressionStart = fun.getRandomNumber(1, 50);
-  const progressionStep = fun.getRandomNumber(1, 50);
-  const progressionLength = fun.getRandomNumber(4, 9);
+  const progressionStart = getRandomNumber(1, 50);
+  const progressionStep = getRandomNumber(1, 50);
+  const progressionLength = getRandomNumber(4, 9);
   progression.push(progressionStart);
   for (let i = 0; i <= progressionLength; i += 1) {
     progression.push(progression[i] + progressionStep);
@@ -14,7 +15,7 @@ const getRandomProgression = () => {
 
 const getHiddenSymbol = (progression) => {
   const progressionLength = progression.length - 1;
-  const HiddenIndex = fun.getRandomNumber(0, progressionLength);
+  const HiddenIndex = getRandomNumber(0, progressionLength);
   const hiddenSymbol = progression[HiddenIndex];
   return hiddenSymbol;
 };
@@ -26,14 +27,18 @@ let correctAnswers = 0;
 let name;
 let progression;
 
+const getNewRound = () => {
+  progression = getRandomProgression();
+  correctAnswer = getHiddenSymbol(progression);
+  console.log(`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
+  playerAnswer = fun.playerQuestion();
+};
+
 const brainProgression = () => {
   name = fun.playerGreetings();
   console.log(rules);
   while (correctAnswers < 3) {
-    progression = getRandomProgression();
-    correctAnswer = getHiddenSymbol(progression);
-    console.log(`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
-    playerAnswer = fun.playerQuestion();
+    getNewRound();
     if (+correctAnswer === +playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
