@@ -1,12 +1,12 @@
 # Description
 
-### A set of educational games.
+### A set of five educational math games.
 
 ---
 
 ## Minimum system requirements
 
-### Node.js 13.2.0
+### Node.js 13.2.0 or higher
 
 ---
 
@@ -14,15 +14,15 @@
 
 ### Attention! Commands must be run from the games directory!
 
-#### installing dependencies
+### Installing dependencies
 
 ```
 make install
 ```
 
-#### installing a package with games
+### Installing a package with games
 
-#### Attention! The command is run with root rights!
+### The command is run with root rights!
 
 ```
 make link
