@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const getRandomNumber = (start, finish) => {
-  const min = Math.ceil(start);
-  const max = Math.floor(finish);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const getRandomNumber = (start, finish) => Math.floor(Math.random() * (finish - start + 1)) + start;
 
 const playerQuestion = () => {
   const result = readlineSync.question('Your answer: ');
