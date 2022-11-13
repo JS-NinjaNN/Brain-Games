@@ -1,4 +1,5 @@
 import * as fun from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomOperator = () => {
   const operators = ['-', '+', '*'];
@@ -34,15 +35,18 @@ let example;
 let correctAnswers = 0;
 let name;
 
+const getNewRound = () => {
+  example = operation(getRandomNumber(1, 50), getRandomOperator(), getRandomNumber(1, 50));
+  correctAnswer = getCorrectAnswer(example);
+  console.log(`Question: ${example[0]} ${example[1]} ${example[2]}`);
+  playerAnswer = fun.playerQuestion();
+};
+
 const brainCalc = () => {
   name = fun.playerGreetings();
   console.log(rules);
   while (correctAnswers < 3) {
-    // eslint-disable-next-line max-len
-    example = operation(fun.getRandomNumber(1, 50), getRandomOperator(), fun.getRandomNumber(1, 50));
-    correctAnswer = getCorrectAnswer(example);
-    console.log(`Question: ${example[0]} ${example[1]} ${example[2]}`);
-    playerAnswer = fun.playerQuestion();
+    getNewRound();
     if (+correctAnswer === +playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
