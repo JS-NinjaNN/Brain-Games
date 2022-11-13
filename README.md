@@ -1,12 +1,12 @@
 # Description
 
-#### A set of educational games.
+### A set of educational games.
 
 ---
 
 ## Minimum system requirements
 
-#### Node.js 13.2.0
+### Node.js 13.2.0
 
 ---
 
