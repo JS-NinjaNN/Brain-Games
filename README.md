@@ -1,6 +1,6 @@
 # Description
 
-A set of five educational math games.
+A set of five educational math games
 
 ---
 
