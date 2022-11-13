@@ -1,4 +1,5 @@
 import * as fun from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (num) => {
   let isZero = 0;
@@ -18,14 +19,18 @@ let randomNumber;
 let correctAnswer;
 let playerAnswer;
 
+const getNewRound = () => {
+  randomNumber = getRandomNumber(2, 100);
+  console.log(`Question: ${randomNumber}`);
+  correctAnswer = isPrime(randomNumber);
+  playerAnswer = fun.playerQuestion();
+};
+
 const brainPrime = () => {
   name = fun.playerGreetings();
   console.log(rules);
   while (correctAnswers < 3) {
-    randomNumber = fun.getRandomNumber(2, 100);
-    console.log(`Question: ${randomNumber}`);
-    correctAnswer = isPrime(randomNumber);
-    playerAnswer = fun.playerQuestion();
+    getNewRound();
     if (correctAnswer === playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
