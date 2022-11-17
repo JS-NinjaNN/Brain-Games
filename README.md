@@ -1,3 +1,11 @@
+### Hexlet tests and linter status:
+
+[![Actions Status](https://github.com/ToxicNN/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ToxicNN/frontend-project-44/actions)
+
+## <a href="https://codeclimate.com/github/ToxicNN/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ae900498ba84d470d1a/maintainability" /></a>
+
+---
+
 # Description
 
 A set of five educational math games
@@ -73,9 +81,3 @@ brain-prime
 [![asciicast](https://asciinema.org/a/f1u96iWv0dhQW59H2aQpJr0sL.svg)](https://asciinema.org/a/f1u96iWv0dhQW59H2aQpJr0sL)
 
 ---
-
-### Hexlet tests and linter status:
-
-[![Actions Status](https://github.com/ToxicNN/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ToxicNN/frontend-project-44/actions)
-
-<a href="https://codeclimate.com/github/ToxicNN/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ae900498ba84d470d1a/maintainability" /></a>
