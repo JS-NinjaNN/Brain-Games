@@ -23,6 +23,29 @@ const playerGreetings = () => {
   return name;
 };
 
-export {
-  playerQuestion, playerLose, playerWin, gameOver, playerGreetings,
+const run = (rules, rounds) => {
+  let correctAnswers = 0;
+  let playerAnswer;
+  let correctAnswer;
+  let roundsCount = 0;
+  const username = playerGreetings();
+  console.log(rules);
+  while (correctAnswers < 3) {
+    // [0] - вопрос, [1] - правильный ответ;
+    const currentRound = rounds[roundsCount];
+    const [question, answer] = currentRound;
+    console.log(question);
+    playerAnswer = playerQuestion();
+    correctAnswer = answer;
+    if (+correctAnswer === +playerAnswer) {
+      console.log('Correct!');
+      correctAnswers += 1;
+    } else {
+      return gameOver(correctAnswers, playerAnswer, answer, username);
+    }
+    roundsCount += 1;
+  }
+  return gameOver(correctAnswers, playerAnswer, correctAnswer, username);
 };
+
+export default run;
