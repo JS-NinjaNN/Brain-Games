@@ -34,7 +34,7 @@ const getNewRounds = () => {
     const items = [];
     const example = operation(getRandomNumber(1, 50), getRandomOperator(), getRandomNumber(1, 50));
     items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
-    items.push(getCorrectAnswer(example));
+    items.push(String(getCorrectAnswer(example)));
     rounds.push(items);
   }
   return rounds;
