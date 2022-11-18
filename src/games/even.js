@@ -1,38 +1,29 @@
-import * as fun from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
+
 const isEven = (num) => {
-  const even = (num % 2 === 0) ? 'yes' : 'no';
-  return even;
+  const result = (num % 2 === 0) ? 'yes' : 'no';
+  return result;
 };
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
-let correctAnswers = 0;
-let name;
-let randomNumber;
-let correctAnswer;
-let playerAnswer;
-
-const getNewRound = () => {
-  randomNumber = getRandomNumber(1, 100);
-  console.log(`Question: ${randomNumber}`);
-  correctAnswer = isEven(randomNumber);
-  playerAnswer = fun.playerQuestion();
+const getNewRounds = () => {
+  // [0] - вопрос, [1] - ответ;
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    const items = [];
+    const randomNumber = getRandomNumber(1, 100);
+    items.push(`Question: ${randomNumber}`);
+    items.push(isEven(randomNumber));
+    rounds.push(items);
+  }
+  console.log(rounds);
+  return rounds;
 };
 
 const brainEven = () => {
-  name = fun.playerGreetings();
-  console.log(rules);
-  while (correctAnswers < 3) {
-    getNewRound();
-    if (correctAnswer === playerAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      break;
-    }
-  }
-  fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name);
+  run(rules, getNewRounds());
 };
 
 export default brainEven;
