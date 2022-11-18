@@ -1,5 +1,7 @@
-import * as fun from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../utils.js';
+
+const rules = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const operators = ['-', '+', '*'];
@@ -8,10 +10,7 @@ const getRandomOperator = () => {
   return operator;
 };
 
-const operation = (a, operator, b) => {
-  const example = [a, operator, b];
-  return example;
-};
+const operation = (a, operator, b) => [a, operator, b];
 
 const getCorrectAnswer = (example) => {
   let correctAnswer;
@@ -28,33 +27,21 @@ const getCorrectAnswer = (example) => {
   return correctAnswer;
 };
 
-const rules = 'What is the result of the expression?';
-let correctAnswer;
-let playerAnswer;
-let example;
-let correctAnswers = 0;
-let name;
-
-const getNewRound = () => {
-  example = operation(getRandomNumber(1, 50), getRandomOperator(), getRandomNumber(1, 50));
-  correctAnswer = getCorrectAnswer(example);
-  console.log(`Question: ${example[0]} ${example[1]} ${example[2]}`);
-  playerAnswer = fun.playerQuestion();
+const getNewRounds = () => {
+  // [0] - вопрос, [1] - ответ;
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    const items = [];
+    const example = operation(getRandomNumber(1, 50), getRandomOperator(), getRandomNumber(1, 50));
+    items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
+    items.push(getCorrectAnswer(example));
+    rounds.push(items);
+  }
+  return rounds;
 };
 
 const brainCalc = () => {
-  name = fun.playerGreetings();
-  console.log(rules);
-  while (correctAnswers < 3) {
-    getNewRound();
-    if (+correctAnswer === +playerAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      break;
-    }
-  }
-  fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name);
+  run(rules, getNewRounds());
 };
 
 export default brainCalc;
