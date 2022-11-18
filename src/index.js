@@ -37,7 +37,7 @@ const run = (rules, rounds) => {
     console.log(question);
     playerAnswer = playerQuestion();
     correctAnswer = answer;
-    if (+correctAnswer === +playerAnswer) {
+    if (correctAnswer === playerAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
