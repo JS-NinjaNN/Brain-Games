@@ -1,20 +1,16 @@
 import runCalc from '../index.js';
-import getRandomNumber from '../utils.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What is the result of the expression?';
 const operators = ['-', '+', '*'];
 const minNum = 1;
 const maxNum = 50;
 
-const getRandomOperator = () => {
-  const randomIndex = Math.floor(Math.random() * 3);
-  const operator = operators[randomIndex];
-  return operator;
-};
+const getRandomOperator = () => operators[getRandomIndex(operators)];
 
 const operation = (a, operator, b) => [a, operator, b];
 
-const getCorrectAnswer = (example) => {
+const calculate = (example) => {
   let correctAnswer;
   switch (example[1]) {
     case '+':
@@ -38,7 +34,7 @@ const getNewRounds = () => {
     const secondRandoNum = getRandomNumber(minNum, maxNum);
     const example = operation(firstRandomNum, getRandomOperator(), secondRandoNum);
     items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
-    items.push(String(getCorrectAnswer(example)));
+    items.push(String(calculate(example)));
     rounds.push(items);
   }
   return rounds;
