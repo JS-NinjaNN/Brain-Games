@@ -1,5 +1,5 @@
-import run from '../index.js';
-import getRandomNumber from '../utils.js';
+import runProgression from '../index.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
@@ -16,9 +16,7 @@ const getRandomProgression = () => {
 };
 
 const getHiddenSymbol = (progression) => {
-  const progressionLength = progression.length - 1;
-  const HiddenIndex = getRandomNumber(0, progressionLength);
-  const hiddenSymbol = progression[HiddenIndex];
+  const hiddenSymbol = progression[getRandomIndex(progression)];
   return hiddenSymbol;
 };
 
@@ -37,7 +35,7 @@ const getNewRounds = () => {
 };
 
 const brainProgression = () => {
-  run(rules, getNewRounds());
+  runProgression(rules, getNewRounds());
 };
 
 export default brainProgression;
