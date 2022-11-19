@@ -62,7 +62,7 @@ brain-calc
 brain-gcd
 ```
 
-[![asciicast](https://asciinema.org/a/hpsMndQAer8iAndjMUvaUDw78.svg)](https://asciinema.org/a/hpsMndQAer8iAndjMUvaUDw78)
+[![asciicast](https://asciinema.org/a/vj1yN2G3U9w6j3riTd8mKl4ym.svg)](https://asciinema.org/a/vj1yN2G3U9w6j3riTd8mKl4ym)
 
 - ### Brain-progression game
 
