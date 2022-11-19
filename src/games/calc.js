@@ -3,8 +3,8 @@ import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What is the result of the expression?';
 const operators = ['-', '+', '*'];
-const minNum = 1;
-const maxNum = 50;
+const min = 1;
+const max = 50;
 
 const getRandomOperator = () => operators[getRandomIndex(operators)];
 
@@ -29,9 +29,9 @@ const getNewRounds = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
     const items = [];
-    const firstRandomNum = getRandomNumber(minNum, maxNum);
-    const secondRandoNum = getRandomNumber(minNum, maxNum);
-    const example = operation(firstRandomNum, getRandomOperator(), secondRandoNum);
+    const firstRandomNum = getRandomNumber(min, max);
+    const secondRandomNum = getRandomNumber(min, max);
+    const example = operation(firstRandomNum, getRandomOperator(), secondRandomNum);
     items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
     items.push(String(calculate(example)));
     rounds.push(items);

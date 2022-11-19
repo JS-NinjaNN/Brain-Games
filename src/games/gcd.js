@@ -2,8 +2,8 @@ import runGcd from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-const minNum = 1;
-const maxNum = 50;
+const min = 1;
+const max = 50;
 
 const getGCD = (x, y) => {
   let answer;
@@ -23,8 +23,8 @@ const getNewRounds = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
     const items = [];
-    const givenNumberOne = getRandomNumber(minNum, maxNum);
-    const givenNumberTwo = getRandomNumber(minNum, maxNum);
+    const givenNumberOne = getRandomNumber(min, max);
+    const givenNumberTwo = getRandomNumber(min, max);
     items.push(`Question: ${givenNumberOne} ${givenNumberTwo}`);
     items.push(String(getGCD(givenNumberOne, givenNumberTwo)));
     rounds.push(items);
