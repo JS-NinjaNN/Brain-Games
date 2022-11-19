@@ -11,21 +11,16 @@ const getRandomOperator = () => operators[getRandomIndex(operators)];
 const operation = (a, operator, b) => [a, operator, b];
 
 const calculate = (example) => {
-  let correctAnswer;
   switch (example[1]) {
     case '+':
-      correctAnswer = example[0] + example[2];
-      break;
+      return example[0] + example[2];
     case '-':
-      correctAnswer = example[0] - example[2];
-      break;
+      return example[0] - example[2];
     case '*':
-      correctAnswer = example[0] * example[2];
-      break;
+      return example[0] * example[2];
     default:
       throw new Error(`Unknown order state: '${example}'!`);
   }
-  return correctAnswer;
 };
 
 const getNewRounds = () => {
