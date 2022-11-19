@@ -30,7 +30,7 @@ make install
 
 Installing a package with games
 
-The command is run with root rights!
+The following command will be run as root!
 
 ```
 make link
@@ -54,7 +54,7 @@ brain-even
 brain-calc
 ```
 
-[![asciicast](https://asciinema.org/a/1fVbNpzctJbzKaLX6Y2HMfRyn.svg)](https://asciinema.org/a/1fVbNpzctJbzKaLX6Y2HMfRyn)
+[![asciicast](https://asciinema.org/a/ini4XQhUFYFvMNgUTiSazd9BA.svg)](https://asciinema.org/a/ini4XQhUFYFvMNgUTiSazd9BA)
 
 - ### Brain-gcd game
 
