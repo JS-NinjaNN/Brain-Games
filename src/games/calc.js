@@ -2,9 +2,11 @@ import runCalc from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const rules = 'What is the result of the expression?';
+const operators = ['-', '+', '*'];
+const minNum = 1;
+const maxNum = 50;
 
 const getRandomOperator = () => {
-  const operators = ['-', '+', '*'];
   const randomIndex = Math.floor(Math.random() * 3);
   const operator = operators[randomIndex];
   return operator;
@@ -32,7 +34,9 @@ const getNewRounds = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
     const items = [];
-    const example = operation(getRandomNumber(1, 50), getRandomOperator(), getRandomNumber(1, 50));
+    const firstRandomNum = getRandomNumber(minNum, maxNum);
+    const secondRandoNum = getRandomNumber(minNum, maxNum);
+    const example = operation(firstRandomNum, getRandomOperator(), secondRandoNum);
     items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
     items.push(String(getCorrectAnswer(example)));
     rounds.push(items);

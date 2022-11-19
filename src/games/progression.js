@@ -2,12 +2,16 @@ import runProgression from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
+const minNum = 1;
+const maxNum = 50;
+const minProgressionLength = 4;
+const maxProgressionLength = 9;
 
 const getRandomProgression = () => {
   const progression = [];
-  const progressionStart = getRandomNumber(1, 50);
-  const progressionStep = getRandomNumber(1, 50);
-  const progressionLength = getRandomNumber(4, 9);
+  const progressionStart = getRandomNumber(minNum, maxNum);
+  const progressionStep = getRandomNumber(minNum, maxNum);
+  const progressionLength = getRandomNumber(minProgressionLength, maxProgressionLength);
   progression.push(progressionStart);
   for (let i = 0; i <= progressionLength; i += 1) {
     progression.push(progression[i] + progressionStep);
