@@ -1,5 +1,7 @@
-import * as fun from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../utils.js';
+
+const rules = 'What number is missing in the progression?';
 
 const getRandomProgression = () => {
   const progression = [];
@@ -20,33 +22,22 @@ const getHiddenSymbol = (progression) => {
   return hiddenSymbol;
 };
 
-const rules = 'What number is missing in the progression?';
-let correctAnswer;
-let playerAnswer;
-let correctAnswers = 0;
-let name;
-let progression;
-
-const getNewRound = () => {
-  progression = getRandomProgression();
-  correctAnswer = getHiddenSymbol(progression);
-  console.log(`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
-  playerAnswer = fun.playerQuestion();
+const getNewRounds = () => {
+  // [0] - вопрос, [1] - ответ;
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    const items = [];
+    const progression = getRandomProgression();
+    const correctAnswer = getHiddenSymbol(progression);
+    items.push(`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
+    items.push(String(correctAnswer));
+    rounds.push(items);
+  }
+  return rounds;
 };
 
 const brainProgression = () => {
-  name = fun.playerGreetings();
-  console.log(rules);
-  while (correctAnswers < 3) {
-    getNewRound();
-    if (+correctAnswer === +playerAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      break;
-    }
-  }
-  fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name);
+  run(rules, getNewRounds());
 };
 
 export default brainProgression;
