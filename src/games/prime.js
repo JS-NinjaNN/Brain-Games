@@ -1,5 +1,7 @@
-import * as fun from '../index.js';
+import run from '../index.js';
 import getRandomNumber from '../utils.js';
+
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   let isZero = 0;
@@ -12,33 +14,21 @@ const isPrime = (num) => {
   return result;
 };
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-let correctAnswers = 0;
-let name;
-let randomNumber;
-let correctAnswer;
-let playerAnswer;
-
-const getNewRound = () => {
-  randomNumber = getRandomNumber(2, 100);
-  console.log(`Question: ${randomNumber}`);
-  correctAnswer = isPrime(randomNumber);
-  playerAnswer = fun.playerQuestion();
+const getNewRounds = () => {
+  // [0] - вопрос, [1] - ответ;
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    const items = [];
+    const randomNumber = getRandomNumber(2, 100);
+    items.push(`Question: ${randomNumber}`);
+    items.push(String(isPrime(randomNumber)));
+    rounds.push(items);
+  }
+  return rounds;
 };
 
 const brainPrime = () => {
-  name = fun.playerGreetings();
-  console.log(rules);
-  while (correctAnswers < 3) {
-    getNewRound();
-    if (correctAnswer === playerAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      break;
-    }
-  }
-  fun.gameOver(correctAnswers, playerAnswer, correctAnswer, name);
+  run(rules, getNewRounds());
 };
 
 export default brainPrime;
