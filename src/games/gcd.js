@@ -1,5 +1,5 @@
 import runGcd from '../index.js';
-import getRandomNumber from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 const minNum = 1;

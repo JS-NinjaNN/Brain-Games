@@ -1,5 +1,5 @@
 import runEven from '../index.js';
-import getRandomNumber from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
 const minNum = 1;
