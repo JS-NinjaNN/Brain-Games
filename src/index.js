@@ -23,7 +23,7 @@ const playerGreetings = () => {
   return name;
 };
 
-const run = (rules, rounds) => {
+export default (rules, rounds) => {
   let correctAnswers = 0;
   let playerAnswer;
   let correctAnswer;
@@ -47,5 +47,3 @@ const run = (rules, rounds) => {
   }
   return gameOver(correctAnswers, playerAnswer, correctAnswer, username);
 };
-
-export default run;
