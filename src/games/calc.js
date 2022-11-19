@@ -19,8 +19,11 @@ const calculate = (example) => {
     case '-':
       correctAnswer = example[0] - example[2];
       break;
-    default:
+    case '*':
       correctAnswer = example[0] * example[2];
+      break;
+    default:
+      throw new Error(`Unknown order state: '${example}'!`);
   }
   return correctAnswer;
 };
