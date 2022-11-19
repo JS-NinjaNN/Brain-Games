@@ -46,7 +46,7 @@ make link
 brain-even
 ```
 
-[![asciicast](https://asciinema.org/a/2KBZHEyGpv2vjCBOc61XiRnuf.svg)](https://asciinema.org/a/2KBZHEyGpv2vjCBOc61XiRnuf)
+[![asciicast](https://asciinema.org/a/sBjnCn91DuJ2EtzgdVfxPC9Bs.svg)](https://asciinema.org/a/sBjnCn91DuJ2EtzgdVfxPC9Bs)
 
 - ### Brain-calc game
 
