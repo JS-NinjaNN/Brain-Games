@@ -70,7 +70,7 @@ brain-gcd
 brain-progression
 ```
 
-[![asciicast](https://asciinema.org/a/mR9n3l9gbCglzk3FrY22q1t0c.svg)](https://asciinema.org/a/mR9n3l9gbCglzk3FrY22q1t0c)
+[![asciicast](https://asciinema.org/a/hyTfdmqBaXTgqXmBh7lQydXBB.svg)](https://asciinema.org/a/hyTfdmqBaXTgqXmBh7lQydXBB)
 
 - ### Brain-prime game
 
