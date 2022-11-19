@@ -6,13 +6,13 @@ const minNum = 2;
 const maxNum = 100;
 
 const isPrime = (num) => {
-  let isZero = 0;
+  let isTwo = 0;
   for (let i = 1; i <= num; i += 1) {
     if (num % i === 0) {
-      isZero += 1;
+      isTwo += 1;
     }
   }
-  const result = isZero === 2 ? 'yes' : 'no';
+  const result = isTwo === 2 ? 'yes' : 'no';
   return result;
 };
 
