@@ -20,7 +20,6 @@ const getNewRounds = () => {
     items.push(isEven(randomNumber));
     rounds.push(items);
   }
-  console.log(rounds);
   return rounds;
 };
 
