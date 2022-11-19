@@ -5,11 +5,11 @@ const rules = 'Find the greatest common divisor of given numbers.';
 const minNum = 1;
 const maxNum = 50;
 
-const getGCD = (a, b) => {
+const getGCD = (x, y) => {
   let answer;
-  let i = a > b ? a : b;
+  let i = x > y ? x : y;
   while (i > 0) {
-    if (a % i === 0 && b % i === 0) {
+    if (x % i === 0 && y % i === 0) {
       answer = i;
       break;
     }
