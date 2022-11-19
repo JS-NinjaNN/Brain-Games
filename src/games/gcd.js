@@ -1,4 +1,4 @@
-import run from '../index.js';
+import runGcd from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
@@ -31,7 +31,7 @@ const getNewRounds = () => {
 };
 
 const brainGcd = () => {
-  run(rules, getNewRounds());
+  runGcd(rules, getNewRounds());
 };
 
 export default brainGcd;
