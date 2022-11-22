@@ -8,8 +8,6 @@ const max = 50;
 
 const getRandomOperator = () => operators[getRandomIndex(operators)];
 
-const operation = (a, operator, b) => [a, operator, b];
-
 const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
