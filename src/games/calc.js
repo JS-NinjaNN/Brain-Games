@@ -1,4 +1,4 @@
-import runCalc from '../index.js';
+import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What is the result of the expression?';
@@ -34,7 +34,7 @@ const getNewRound = () => {
 };
 
 const brainCalc = () => {
-  runCalc(rules, getNewRound());
+  run(rules, getNewRound());
 };
 
 export default brainCalc;
