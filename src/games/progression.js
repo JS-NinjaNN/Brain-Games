@@ -31,8 +31,8 @@ const getNewRound = () => {
   return [question, correctAnswer];
 };
 
-const brainProgression = () => {
+const runProgression = () => {
   run(rules, getNewRound());
 };
 
-export default brainProgression;
+export default runProgression;

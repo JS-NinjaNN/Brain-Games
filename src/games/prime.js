@@ -23,8 +23,8 @@ const getNewRound = () => {
   return [question, correctAnswer];
 };
 
-const brainPrime = () => {
+const runPrime = () => {
   run(rules, getNewRound());
 };
 
-export default brainPrime;
+export default runPrime;

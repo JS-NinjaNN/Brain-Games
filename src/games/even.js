@@ -17,8 +17,8 @@ const getNewRound = () => {
   return [question, correctAnswer];
 };
 
-const brainEven = () => {
+const runEven = () => {
   run(rules, getNewRound());
 };
 
-export default brainEven;
+export default runEven;

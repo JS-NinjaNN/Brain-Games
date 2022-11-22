@@ -33,8 +33,8 @@ const getNewRound = () => {
   return [question, correctAnswer];
 };
 
-const brainCalc = () => {
+const runCalc = () => {
   run(rules, getNewRound());
 };
 
-export default brainCalc;
+export default runCalc;

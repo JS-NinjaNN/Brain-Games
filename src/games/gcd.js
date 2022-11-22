@@ -26,8 +26,8 @@ const getNewRound = () => {
   return [question, correctAnswer];
 };
 
-const brainGcd = () => {
+const runGcd = () => {
   run(rules, getNewRound());
 };
 
-export default brainGcd;
+export default runGcd;
