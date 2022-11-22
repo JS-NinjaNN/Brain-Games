@@ -10,7 +10,7 @@ const isEven = (num) => {
   return result;
 };
 
-const getNewRounds = () => {
+const getNewRound = () => {
   const randomNumber = getRandomNumber(min, max);
   const question = (`Question: ${randomNumber}`);
   const correctAnswer = (isEven(randomNumber));
@@ -18,7 +18,7 @@ const getNewRounds = () => {
 };
 
 const brainEven = () => {
-  runEven(rules, getNewRounds());
+  runEven(rules, getNewRound());
 };
 
 export default brainEven;
