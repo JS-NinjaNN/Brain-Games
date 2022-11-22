@@ -25,17 +25,10 @@ const getHiddenSymbol = (progression) => {
 };
 
 const getNewRounds = () => {
-  // [0] - вопрос, [1] - ответ;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const items = [];
-    const progression = getRandomProgression();
-    const correctAnswer = getHiddenSymbol(progression);
-    items.push(`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
-    items.push(String(correctAnswer));
-    rounds.push(items);
-  }
-  return rounds;
+  const progression = getRandomProgression();
+  const correctAnswer = String(getHiddenSymbol(progression));
+  const question = (`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
+  return [question, correctAnswer];
 };
 
 const brainProgression = () => {
