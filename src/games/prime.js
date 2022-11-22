@@ -17,16 +17,10 @@ const isPrime = (num) => {
 };
 
 const getNewRounds = () => {
-  // [0] - вопрос, [1] - ответ;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const items = [];
-    const randomNumber = getRandomNumber(min, max);
-    items.push(`Question: ${randomNumber}`);
-    items.push(String(isPrime(randomNumber)));
-    rounds.push(items);
-  }
-  return rounds;
+  const randomNumber = getRandomNumber(min, max);
+  const question = (`Question: ${randomNumber}`);
+  const correctAnswer = (String(isPrime(randomNumber)));
+  return [question, correctAnswer];
 };
 
 const brainPrime = () => {
