@@ -18,7 +18,7 @@ const getGCD = (x, y) => {
   return answer;
 };
 
-const getNewRounds = () => {
+const getNewRound = () => {
   const givenNumberOne = getRandomNumber(min, max);
   const givenNumberTwo = getRandomNumber(min, max);
   const question = (`Question: ${givenNumberOne} ${givenNumberTwo}`);
@@ -27,7 +27,7 @@ const getNewRounds = () => {
 };
 
 const brainGcd = () => {
-  runGcd(rules, getNewRounds());
+  runGcd(rules, getNewRound());
 };
 
 export default brainGcd;
