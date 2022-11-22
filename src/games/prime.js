@@ -24,7 +24,11 @@ const getNewRound = () => {
 };
 
 const runPrime = () => {
-  run(rules, getNewRound());
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    rounds.push(getNewRound());
+  }
+  run(rules, rounds);
 };
 
 export default runPrime;
