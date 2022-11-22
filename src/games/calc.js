@@ -24,7 +24,7 @@ const calculate = (example) => {
   }
 };
 
-const getNewRounds = () => {
+const getNewRound = () => {
   const firstRandomNum = getRandomNumber(min, max);
   const secondRandomNum = getRandomNumber(min, max);
   const example = operation(firstRandomNum, getRandomOperator(), secondRandomNum);
@@ -34,7 +34,7 @@ const getNewRounds = () => {
 };
 
 const brainCalc = () => {
-  runCalc(rules, getNewRounds());
+  runCalc(rules, getNewRound());
 };
 
 export default brainCalc;
