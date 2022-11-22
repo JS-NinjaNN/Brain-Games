@@ -16,7 +16,7 @@ const isPrime = (num) => {
   return result;
 };
 
-const getNewRounds = () => {
+const getNewRound = () => {
   const randomNumber = getRandomNumber(min, max);
   const question = (`Question: ${randomNumber}`);
   const correctAnswer = (String(isPrime(randomNumber)));
@@ -24,7 +24,7 @@ const getNewRounds = () => {
 };
 
 const brainPrime = () => {
-  runPrime(rules, getNewRounds());
+  runPrime(rules, getNewRound());
 };
 
 export default brainPrime;
