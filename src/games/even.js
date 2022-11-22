@@ -11,16 +11,10 @@ const isEven = (num) => {
 };
 
 const getNewRounds = () => {
-  // [0] - вопрос, [1] - ответ;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const items = [];
-    const randomNumber = getRandomNumber(min, max);
-    items.push(`Question: ${randomNumber}`);
-    items.push(isEven(randomNumber));
-    rounds.push(items);
-  }
-  return rounds;
+  const randomNumber = getRandomNumber(min, max);
+  const question = (`Question: ${randomNumber}`);
+  const correctAnswer = (isEven(randomNumber));
+  return [question, correctAnswer];
 };
 
 const brainEven = () => {
