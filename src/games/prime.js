@@ -1,4 +1,4 @@
-import runPrime from '../index.js';
+import run from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -24,7 +24,7 @@ const getNewRound = () => {
 };
 
 const brainPrime = () => {
-  runPrime(rules, getNewRound());
+  run(rules, getNewRound());
 };
 
 export default brainPrime;
