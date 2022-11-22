@@ -1,4 +1,4 @@
-import runProgression from '../index.js';
+import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
@@ -32,7 +32,7 @@ const getNewRound = () => {
 };
 
 const brainProgression = () => {
-  runProgression(rules, getNewRound());
+  run(rules, getNewRound());
 };
 
 export default brainProgression;
