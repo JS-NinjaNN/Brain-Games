@@ -25,18 +25,12 @@ const calculate = (example) => {
 };
 
 const getNewRounds = () => {
-  // [0] - вопрос, [1] - ответ;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const items = [];
-    const firstRandomNum = getRandomNumber(min, max);
-    const secondRandomNum = getRandomNumber(min, max);
-    const example = operation(firstRandomNum, getRandomOperator(), secondRandomNum);
-    items.push(`Question: ${example[0]} ${example[1]} ${example[2]}`);
-    items.push(String(calculate(example)));
-    rounds.push(items);
-  }
-  return rounds;
+  const firstRandomNum = getRandomNumber(min, max);
+  const secondRandomNum = getRandomNumber(min, max);
+  const example = operation(firstRandomNum, getRandomOperator(), secondRandomNum);
+  const question = (`Question: ${example[0]} ${example[1]} ${example[2]}`);
+  const correctAnswer = (String(calculate(example)));
+  return [question, correctAnswer];
 };
 
 const brainCalc = () => {
