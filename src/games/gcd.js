@@ -19,17 +19,11 @@ const getGCD = (x, y) => {
 };
 
 const getNewRounds = () => {
-  // [0] - вопрос, [1] - ответ;
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const items = [];
-    const givenNumberOne = getRandomNumber(min, max);
-    const givenNumberTwo = getRandomNumber(min, max);
-    items.push(`Question: ${givenNumberOne} ${givenNumberTwo}`);
-    items.push(String(getGCD(givenNumberOne, givenNumberTwo)));
-    rounds.push(items);
-  }
-  return rounds;
+  const givenNumberOne = getRandomNumber(min, max);
+  const givenNumberTwo = getRandomNumber(min, max);
+  const question = (`Question: ${givenNumberOne} ${givenNumberTwo}`);
+  const correctAnswer = (String(getGCD(givenNumberOne, givenNumberTwo)));
+  return [question, correctAnswer];
 };
 
 const brainGcd = () => {
