@@ -6,9 +6,7 @@ const operators = ['-', '+', '*'];
 const min = 1;
 const max = 50;
 
-const getRandomOperator = () => operators[getRandomIndex(operators)];
-
-const calculate = (x, y, operator) => {
+const calculate = (operator, x, y) => {
   switch (operator) {
     case '+':
       return x + y;
@@ -24,9 +22,9 @@ const calculate = (x, y, operator) => {
 const getNewRound = () => {
   const firstRandomNum = getRandomNumber(min, max);
   const secondRandomNum = getRandomNumber(min, max);
-  const operator = getRandomOperator();
+  const operator = operators[getRandomIndex(operators)];
   const question = (`Question: ${firstRandomNum} ${operator} ${secondRandomNum}`);
-  const correctAnswer = (String(calculate(firstRandomNum, secondRandomNum, operator)));
+  const correctAnswer = (String(calculate(operator, firstRandomNum, secondRandomNum)));
   return [question, correctAnswer];
 };
 
