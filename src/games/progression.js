@@ -19,10 +19,7 @@ const getRandomProgression = () => {
   return progression;
 };
 
-const getHiddenSymbol = (progression) => {
-  const hiddenSymbol = progression[getRandomIndex(progression)];
-  return hiddenSymbol;
-};
+const getHiddenSymbol = (progression) => progression[getRandomIndex(progression)];
 
 const getNewRound = () => {
   const progression = getRandomProgression();
