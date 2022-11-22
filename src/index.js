@@ -7,7 +7,7 @@ let roundsCount = 0;
 const generateRounds = (fun) => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    console.log(fun);
+    rounds.push(fun);
   }
   return rounds;
 };
