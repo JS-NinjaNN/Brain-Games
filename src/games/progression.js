@@ -24,7 +24,7 @@ const getHiddenSymbol = (progression) => {
   return hiddenSymbol;
 };
 
-const getNewRounds = () => {
+const getNewRound = () => {
   const progression = getRandomProgression();
   const correctAnswer = String(getHiddenSymbol(progression));
   const question = (`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
@@ -32,7 +32,7 @@ const getNewRounds = () => {
 };
 
 const brainProgression = () => {
-  runProgression(rules, getNewRounds());
+  runProgression(rules, getNewRound());
 };
 
 export default brainProgression;
