@@ -15,16 +15,16 @@ const calculate = (operator, x, y) => {
     case '*':
       return x * y;
     default:
-      throw new Error(`Unknown order state: '${operator}'!`);
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
 const getNewRound = () => {
-  const firstRandomNum = getRandomNumber(min, max);
-  const secondRandomNum = getRandomNumber(min, max);
+  const firstNum = getRandomNumber(min, max);
+  const secondNum = getRandomNumber(min, max);
   const operator = operators[getRandomIndex(operators)];
-  const question = (`Question: ${firstRandomNum} ${operator} ${secondRandomNum}`);
-  const correctAnswer = (String(calculate(operator, firstRandomNum, secondRandomNum)));
+  const question = (`Question: ${firstNum} ${operator} ${secondNum}`);
+  const correctAnswer = (String(calculate(operator, firstNum, secondNum)));
   return [question, correctAnswer];
 };
 
