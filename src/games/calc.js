@@ -10,8 +10,7 @@ const getRandomOperator = () => operators[getRandomIndex(operators)];
 
 const operation = (a, operator, b) => [a, operator, b];
 
-const calculate = (example) => {
-  const [x, operator, y] = example;
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
       return x + y;
@@ -20,16 +19,16 @@ const calculate = (example) => {
     case '*':
       return x * y;
     default:
-      throw new Error(`Unknown order state: '${example}'!`);
+      throw new Error(`Unknown order state: '${operator}'!`);
   }
 };
 
 const getNewRound = () => {
   const firstRandomNum = getRandomNumber(min, max);
   const secondRandomNum = getRandomNumber(min, max);
-  const example = operation(firstRandomNum, getRandomOperator(), secondRandomNum);
-  const question = (`Question: ${example[0]} ${example[1]} ${example[2]}`);
-  const correctAnswer = (String(calculate(example)));
+  const operator = getRandomOperator();
+  const question = (`Question: ${firstRandomNum} ${operator} ${secondRandomNum}`);
+  const correctAnswer = (String(calculate(firstRandomNum, secondRandomNum, operator)));
   return [question, correctAnswer];
 };
 
