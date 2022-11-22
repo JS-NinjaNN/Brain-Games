@@ -1,5 +1,9 @@
 import readlineSync from 'readline-sync';
 
+// Илья, а действительно нам нужно сюда выносить roundsCount?
+// Эта переменная ведь может быть объявлена циклом for
+let roundsCount = 0;
+
 const playerQuestion = () => {
   const result = readlineSync.question('Your answer: ');
   return result;
@@ -12,8 +16,8 @@ const run = (rules, rounds) => {
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}`);
   console.log(rules);
-  for (let i = 0; i < 3; i += 1) {
-    const currentRound = rounds[i];
+  for (roundsCount; roundsCount < 3; roundsCount += 1) {
+    const currentRound = rounds[roundsCount];
     const [question, answer] = currentRound;
     console.log(question);
     correctAnswer = answer;
