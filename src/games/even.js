@@ -1,4 +1,4 @@
-import runEven from '../index.js';
+import run from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
@@ -18,7 +18,7 @@ const getNewRound = () => {
 };
 
 const brainEven = () => {
-  runEven(rules, getNewRound());
+  run(rules, getNewRound());
 };
 
 export default brainEven;
