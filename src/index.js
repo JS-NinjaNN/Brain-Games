@@ -4,11 +4,6 @@ import readlineSync from 'readline-sync';
 // Эта переменная ведь может быть объявлена циклом for
 let roundsCount = 0;
 
-const playerQuestion = () => {
-  const result = readlineSync.question('Your answer: ');
-  return result;
-};
-
 const run = (rules, rounds) => {
   let playerAnswer;
   let correctAnswer;
@@ -21,7 +16,7 @@ const run = (rules, rounds) => {
     const [question, answer] = currentRound;
     console.log(question);
     correctAnswer = answer;
-    playerAnswer = playerQuestion();
+    playerAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer !== playerAnswer) {
       return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${username}!`);
     }
