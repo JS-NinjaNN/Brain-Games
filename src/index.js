@@ -9,7 +9,7 @@ const run = (rules, rounds) => {
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}`);
   console.log(rules);
-  for (let i; roundsCount > 0; i += 1, roundsCount -= 1) {
+  for (let i = 0; roundsCount > 0; i += 1, roundsCount -= 1) {
     const [question, answer] = rounds[i];
     console.log(question);
     correctAnswer = answer;
