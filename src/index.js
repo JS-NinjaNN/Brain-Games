@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-let roundsCount = 3;
+const roundsCount = 3;
 
 const run = (rules, rounds) => {
   let playerAnswer;
@@ -9,7 +9,7 @@ const run = (rules, rounds) => {
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}`);
   console.log(rules);
-  for (let i = 0; roundsCount > 0; i += 1, roundsCount -= 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const [question, answer] = rounds[i];
     console.log(question);
     correctAnswer = answer;
