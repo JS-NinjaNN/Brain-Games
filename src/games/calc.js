@@ -1,4 +1,4 @@
-import { generateRounds, run } from '../index.js';
+import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const rules = 'What is the result of the expression?';
@@ -29,7 +29,10 @@ const getNewRound = () => {
 };
 
 const runCalc = () => {
-  const rounds = generateRounds(getNewRound());
+  const rounds = [];
+  for (let i = 0; i < 3; i += 1) {
+    rounds.push(getNewRound());
+  }
   run(rules, rounds);
 };
 
