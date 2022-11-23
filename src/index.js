@@ -4,14 +4,6 @@ import readlineSync from 'readline-sync';
 // Эта переменная ведь может быть объявлена циклом for
 let roundsCount = 0;
 
-const generateRounds = (fun) => {
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    rounds.push(fun);
-  }
-  return rounds;
-};
-
 const run = (rules, rounds) => {
   let playerAnswer;
   let correctAnswer;
@@ -33,4 +25,4 @@ const run = (rules, rounds) => {
   return console.log(`Congratulations, ${username}!`);
 };
 
-export { generateRounds, run };
+export default run;
