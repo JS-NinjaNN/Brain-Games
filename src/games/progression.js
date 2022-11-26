@@ -1,7 +1,7 @@
 import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 const min = 1;
 const max = 50;
 const minProgressionLength = 4;
@@ -24,7 +24,7 @@ const getHiddenSymbol = (progression) => progression[getRandomIndex(progression)
 const getNewRound = () => {
   const progression = getRandomProgression();
   const correctAnswer = String(getHiddenSymbol(progression));
-  const question = (`Question: ${progression.join(' ').replace(correctAnswer, '..')}`);
+  const question = `${progression.join(' ').replace(correctAnswer, '..')}`;
   return [question, correctAnswer];
 };
 
@@ -33,7 +33,7 @@ const runProgression = () => {
   for (let i = 0; i < 3; i += 1) {
     rounds.push(getNewRound());
   }
-  run(rules, rounds);
+  run(description, rounds);
 };
 
 export default runProgression;
