@@ -1,7 +1,7 @@
 import run from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 const min = 1;
 const max = 50;
 
@@ -19,10 +19,10 @@ const getGCD = (x, y) => {
 };
 
 const getNewRound = () => {
-  const givenNumberOne = getRandomNumber(min, max);
-  const givenNumberTwo = getRandomNumber(min, max);
-  const question = (`Question: ${givenNumberOne} ${givenNumberTwo}`);
-  const correctAnswer = (String(getGCD(givenNumberOne, givenNumberTwo)));
+  const number1 = getRandomNumber(min, max);
+  const number2 = getRandomNumber(min, max);
+  const question = `${number1} ${number2}`;
+  const correctAnswer = String(getGCD(number1, number2));
   return [question, correctAnswer];
 };
 
@@ -31,7 +31,7 @@ const runGcd = () => {
   for (let i = 0; i < 3; i += 1) {
     rounds.push(getNewRound());
   }
-  run(rules, rounds);
+  run(description, rounds);
 };
 
 export default runGcd;
