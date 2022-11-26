@@ -1,7 +1,7 @@
 import run from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const min = 2;
 const max = 100;
 
@@ -12,14 +12,13 @@ const isPrime = (num) => {
       isTwo += 1;
     }
   }
-  const result = isTwo === 2 ? 'yes' : 'no';
-  return result;
+  return isTwo === 2;
 };
 
 const getNewRound = () => {
-  const randomNumber = getRandomNumber(min, max);
-  const question = (`Question: ${randomNumber}`);
-  const correctAnswer = (String(isPrime(randomNumber)));
+  const number = getRandomNumber(min, max);
+  const question = `${number}`;
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
@@ -28,7 +27,7 @@ const runPrime = () => {
   for (let i = 0; i < 3; i += 1) {
     rounds.push(getNewRound());
   }
-  run(rules, rounds);
+  run(description, rounds);
 };
 
 export default runPrime;
