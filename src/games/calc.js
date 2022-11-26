@@ -1,7 +1,7 @@
 import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const operators = ['-', '+', '*'];
 const min = 1;
 const max = 50;
@@ -20,11 +20,11 @@ const calculate = (operator, x, y) => {
 };
 
 const getNewRound = () => {
-  const firstNum = getRandomNumber(min, max);
-  const secondNum = getRandomNumber(min, max);
+  const number1 = getRandomNumber(min, max);
+  const number2 = getRandomNumber(min, max);
   const operator = operators[getRandomIndex(operators)];
-  const question = (`Question: ${firstNum} ${operator} ${secondNum}`);
-  const correctAnswer = (String(calculate(operator, firstNum, secondNum)));
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = String(calculate(operator, number1, number2));
   return [question, correctAnswer];
 };
 
@@ -33,7 +33,7 @@ const runCalc = () => {
   for (let i = 0; i < 3; i += 1) {
     rounds.push(getNewRound());
   }
-  run(rules, rounds);
+  run(description, rounds);
 };
 
 export default runCalc;
