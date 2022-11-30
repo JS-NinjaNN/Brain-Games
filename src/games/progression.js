@@ -4,13 +4,15 @@ import { getRandomNumber, getRandomIndex } from '../utils.js';
 const description = 'What number is missing in the progression?';
 const min = 1;
 const max = 50;
+const minStep = 1;
+const maxStep = 50;
 const minLength = 4;
 const maxLength = 9;
 
 const getRandomProgression = () => {
   const progression = [];
   const progressionStart = getRandomNumber(min, max);
-  const progressionStep = getRandomNumber(min, max);
+  const progressionStep = getRandomNumber(minStep, maxStep);
   const progressionLength = getRandomNumber(minLength, maxLength);
   progression.push(progressionStart);
   for (let i = 0; i <= progressionLength; i += 1) {
