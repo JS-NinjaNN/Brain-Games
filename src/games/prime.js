@@ -2,8 +2,8 @@ import run from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const min = 2;
-const max = 100;
+const min = -10;
+const max = 50;
 
 const isPrime = (num) => {
   if (num <= 1) {
