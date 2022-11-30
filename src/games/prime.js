@@ -6,13 +6,15 @@ const min = 2;
 const max = 100;
 
 const isPrime = (num) => {
-  let isTwo = 0;
-  for (let i = 1; i <= num; i += 1) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      isTwo += 1;
+      return false;
     }
   }
-  return isTwo === 2;
+  return true;
 };
 
 const getNewRound = () => {
