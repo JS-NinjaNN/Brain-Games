@@ -21,12 +21,12 @@ const getRandomProgression = () => {
   return progression;
 };
 
-const getHiddenSymbol = (progression) => progression[getRandomIndex(progression)];
-
 const getNewRound = () => {
   const progression = getRandomProgression();
-  const correctAnswer = String(getHiddenSymbol(progression));
-  const question = `${progression.join(' ').replace(correctAnswer, '..')}`;
+  const index = getRandomIndex(progression);
+  const correctAnswer = String(progression[index]);
+  progression.splice(index, 1, '..');
+  const question = progression.join(' ');
   return [question, correctAnswer];
 };
 
