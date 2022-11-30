@@ -7,7 +7,7 @@ const max = 50;
 
 const getGCD = (x, y) => (x % y ? getGCD(y, x % y) : y);
 
-const getNewRound = () => {
+const getRound = () => {
   const number1 = getRandomNumber(min, max);
   const number2 = getRandomNumber(min, max);
   const question = `${number1} ${number2}`;
@@ -18,7 +18,7 @@ const getNewRound = () => {
 const runGcd = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    rounds.push(getNewRound());
+    rounds.push(getRound());
   }
   run(description, rounds);
 };

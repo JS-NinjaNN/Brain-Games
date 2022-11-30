@@ -7,7 +7,7 @@ const max = 100;
 
 const isEven = (num) => num % 2 === 0;
 
-const getNewRound = () => {
+const getRound = () => {
   const number = getRandomNumber(min, max);
   const question = String(number);
   const correctAnswer = isEven(number) ? 'yes' : 'no';
@@ -17,7 +17,7 @@ const getNewRound = () => {
 const runEven = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    rounds.push(getNewRound());
+    rounds.push(getRound());
   }
   run(description, rounds);
 };

@@ -21,7 +21,7 @@ const getRandomProgression = () => {
   return progression;
 };
 
-const getNewRound = () => {
+const getRound = () => {
   const progression = getRandomProgression();
   const index = getRandomIndex(progression);
   const correctAnswer = String(progression[index]);
@@ -33,7 +33,7 @@ const getNewRound = () => {
 const runProgression = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    rounds.push(getNewRound());
+    rounds.push(getRound());
   }
   run(description, rounds);
 };

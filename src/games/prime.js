@@ -18,7 +18,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const getNewRound = () => {
+const getRound = () => {
   const number = getRandomNumber(min, max);
   const question = String(number);
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
@@ -28,7 +28,7 @@ const getNewRound = () => {
 const runPrime = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    rounds.push(getNewRound());
+    rounds.push(getRound());
   }
   run(description, rounds);
 };

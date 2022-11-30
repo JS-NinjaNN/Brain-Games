@@ -19,7 +19,7 @@ const calculate = (operator, x, y) => {
   }
 };
 
-const getNewRound = () => {
+const getRound = () => {
   const number1 = getRandomNumber(min, max);
   const number2 = getRandomNumber(min, max);
   const operator = operators[getRandomIndex(operators)];
@@ -31,7 +31,7 @@ const getNewRound = () => {
 const runCalc = () => {
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    rounds.push(getNewRound());
+    rounds.push(getRound());
   }
   run(description, rounds);
 };
