@@ -31,11 +31,7 @@ const getRound = () => {
 };
 
 const runProgression = () => {
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    rounds.push(getRound());
-  }
-  run(description, rounds);
+  run(description, getRound);
 };
 
 export default runProgression;
