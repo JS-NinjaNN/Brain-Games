@@ -9,20 +9,20 @@ const maxStep = 50;
 const minLength = 4;
 const maxLength = 9;
 
-const getProgression = (progressionStart, progressionStep, progressionLength) => {
+const getProgression = (start, step, length) => {
   const progression = [];
-  progression.push(progressionStart);
-  for (let i = 0; i <= progressionLength; i += 1) {
-    progression.push(progression[i] + progressionStep);
+  progression.push(start);
+  for (let i = 0; i <= length; i += 1) {
+    progression.push(progression[i] + step);
   }
   return progression;
 };
 
 const getRound = () => {
-  const progressionStart = getRandomNumber(minStart, maxStart);
-  const progressionStep = getRandomNumber(minStep, maxStep);
-  const progressionLength = getRandomNumber(minLength, maxLength);
-  const progression = getProgression(progressionStart, progressionStep, progressionLength);
+  const start = getRandomNumber(minStart, maxStart);
+  const step = getRandomNumber(minStep, maxStep);
+  const length = getRandomNumber(minLength, maxLength);
+  const progression = getProgression(start, step, length);
   const index = getRandomIndex(progression);
   const correctAnswer = String(progression[index]);
   progression.splice(index, 1, '..');
