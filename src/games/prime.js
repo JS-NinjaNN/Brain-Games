@@ -9,8 +9,8 @@ const isPrime = (num) => {
   if (num <= 1) {
     return false;
   }
-  const sqrtOfNum = Math.sqrt(num);
-  for (let i = 2; i <= sqrtOfNum; i += 1) {
+  const limit = Math.sqrt(num);
+  for (let i = 2; i <= limit; i += 1) {
     if (num % i === 0) {
       return false;
     }
