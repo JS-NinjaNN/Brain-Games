@@ -6,8 +6,8 @@ const minStart = 1;
 const maxStart = 50;
 const minStep = 1;
 const maxStep = 50;
-const minLength = 4;
-const maxLength = 9;
+const minLength = 5;
+const maxLength = 10;
 
 const buildProgression = (start, step, length) => {
   const progression = [];
