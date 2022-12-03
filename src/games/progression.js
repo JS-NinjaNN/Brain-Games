@@ -11,9 +11,9 @@ const maxLength = 9;
 
 const buildProgression = (start, step, length) => {
   const progression = [];
-  progression.push(start);
-  for (let i = 0; i <= length; i += 1) {
-    progression.push(progression[i] + step);
+  for (let i = 0; i < length; i += 1) {
+    const currentElement = progression.length === 0 ? start : (progression[i - 1] + step);
+    progression.push(currentElement);
   }
   return progression;
 };
