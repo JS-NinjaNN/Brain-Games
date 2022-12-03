@@ -24,8 +24,7 @@ const getRound = () => {
   const length = getRandomNumber(minLength, maxLength);
   const progression = buildProgression(start, step, length);
   const index = getRandomIndex(progression);
-  const correctAnswer = String(progression[index]);
-  progression.splice(index, 1, '..');
+  const correctAnswer = String(progression.splice(index, 1, '..'));
   const question = progression.join(' ');
   return [question, correctAnswer];
 };
