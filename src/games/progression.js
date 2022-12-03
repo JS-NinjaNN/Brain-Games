@@ -2,8 +2,8 @@ import run from '../index.js';
 import { getRandomNumber, getRandomIndex } from '../utils.js';
 
 const description = 'What number is missing in the progression?';
-const minNumber = 1;
-const maxNumber = 50;
+const minStart = 1;
+const maxStart = 50;
 const minStep = 1;
 const maxStep = 50;
 const minLength = 4;
@@ -19,7 +19,7 @@ const getProgression = (progressionStart, progressionStep, progressionLength) =>
 };
 
 const getRound = () => {
-  const progressionStart = getRandomNumber(minNumber, maxNumber);
+  const progressionStart = getRandomNumber(minStart, maxStart);
   const progressionStep = getRandomNumber(minStep, maxStep);
   const progressionLength = getRandomNumber(minLength, maxLength);
   const progression = getProgression(progressionStart, progressionStep, progressionLength);
