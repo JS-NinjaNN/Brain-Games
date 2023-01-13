@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ToxicNN/frontend-project-44.git"
+    "url": "git+https://github.com/JS-Samurai/Brain-Games.git"
   },
-  "author": "ToxicNN",
+  "author": "JS-Samurai",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ToxicNN/frontend-project-44/issues"
+    "url": "https://github.com/JS-Samurai/Brain-Games/issues"
   },
-  "homepage": "https://github.com/ToxicNN/frontend-project-44#readme",
+  "homepage": "https://github.com/JS-Samurai/Brain-Games#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
