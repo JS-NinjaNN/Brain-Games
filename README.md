@@ -8,7 +8,7 @@
 
 # Description
 
-A set of five educational math games
+A set of five educational math games that were build to check my first coding skills, that i've learned with first module on Hexlet Frontend with JavaScript. You can win by successfully answering 3 questions in a row in the selected game.
 
 ---
 
@@ -18,27 +18,32 @@ Node.js 13.2.0 or higher
 
 ---
 
-## Installation:
+## Setup
 
 Attention! Commands must be run from the games directory!
 
-Installing dependencies
-
-```
-make install
-```
-
-Installing a package with games
-
-The following command will be run as root!
-
-```
-make link
-```
+- Check the current updates for database with available packages: enter command line `apt update`
+- Install **Node.js** package: enter command line `apt install nodejs`
+- Upgrade **Node.js** to the latest version: enter command line `apt upgrade nodejs`
+- To allow you to install modules and packages with **Node.js**, install **npm** package: enter command line `apt install npm`
+- Clone this repository by **SSH key**: `git@github.com:Wenn911/frontend-project-lvl1.git`
+- Add and check depencies: enter command line `make install`
+- Run games: enter command line `make *game name*`
 
 ---
 
-## Launching games:
+## Game List:
+
+1. brain-games - game with introduction
+2. brain-even - check a number for evenness 
+3. brain-calc - calculate simple expressions
+4. brain-gcd - calculate the greatest common divisor of 2 numbers
+5. brain-prime - check a number for primality
+6. brain-progression - calculate and enter missing number from progression
+
+---
+
+## Games overviews
 
 - ### Brain-even game
 
