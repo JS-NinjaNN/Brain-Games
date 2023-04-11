@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JS-Samurai/Brain-Games.git"
+    "url": "git+https://github.com/JS-NinjaNN/Brain-Games.git"
   },
-  "author": "JS-Samurai",
+  "author": "JS-NinjaNN",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JS-Samurai/Brain-Games/issues"
+    "url": "https://github.com/JS-NinjaNN/Brain-Games/issues"
   },
-  "homepage": "https://github.com/JS-Samurai/Brain-Games#readme",
+  "homepage": "https://github.com/JS-NinjaNN/Brain-Games#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
